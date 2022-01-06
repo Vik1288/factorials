@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            background-color:#e67300;
+            display: flex;
+            justify-self: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        h1{
+            flex: 1;
+        }
+        input{
+
+            height: 5vh;
+            width: 40vw;
+            margin: 2vh;
+
+        }
+        p{
+            flex: 1;
+            font-size: medium;
+        }
+        button{
+            margin: 2vh;
+            background-color: rgba(35, 158, 167, 0.884);
+            height: 8vh;
+            width: 10vw;
+            font-size: medium;
+        }
+        button:hover{
+            background-color: rgb(0, 7, 7);
+        }
+
+
+
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Factorial Number</h1><br>
+            <input type="number" class="input" placeholder="Enter a number to find Factorial">
+            <button class="btn" onclick="calculate()"></button><br>
+            <p class="p"></p>
+        </div>
+        <script>
+            function Factorial(n)
+            {
+
+                if (n <= 1)
+                {
+                    return 1;
+                }
+                return n * Factorial(n-1);
+
+            }
+
+            function calculate(){
+                var input = document.querySelector('.input');
+                var p = document.querySelector('.p');
+                var result = Factorial(input.value);
+                p.innerText = result
+            }
+
+
+        </script>
+    </body>
+
+</html>
